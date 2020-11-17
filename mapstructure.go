@@ -639,7 +639,7 @@ func (d *Decoder) decodeUint(name string, data interface{}, val reflect.Value) e
 		} else {
 			val.SetUint(0)
 		}
-	case dataKind == reflect.String && d.config.WeaklyTypedInput:
+	case dataKind == reflect.String ://&& d.config.WeaklyTypedInput:
 		i, err := strconv.ParseUint(dataVal.String(), 0, val.Type().Bits())
 		if err == nil {
 			val.SetUint(i)
